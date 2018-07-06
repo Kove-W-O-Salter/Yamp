@@ -174,3 +174,21 @@ module Text.Yamp where
                                  p' <- p
                                  close
                                  return p'
+
+    --
+    -- Match a Parser between to String's.
+    --
+    delim     :: String -> String -> Parser a -> Parser a
+    delim o c  = sandwhich (matchString o) (matchString c)
+
+    --
+    -- Parse a Parser if the other Parser fails.
+    --
+    notFollowedBy       :: Parser a -> Parser b -> Parser a
+    notFollowedBy p1 p2  = Parser (\stream0 ->
+        case apply p1 stream0 of
+            []            -> []
+            [(x,stream1)] ->
+                case apply p2 stream1 of
+                    []            -> [(x,stream1)]
+                    [(y,stream2)] -> [])
