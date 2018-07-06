@@ -126,6 +126,12 @@ module Text.Yamp where
     asciiSymbol  = satisfy isAsciiSymbol
 
     --
+    -- Match a digit.
+    --
+    digit :: Parser Char
+    digit  = satisfy isDigit
+
+    --
     -- Match white-space character.
     --
     space :: Parser Char
@@ -167,4 +173,4 @@ module Text.Yamp where
     sandwhich open close p  = do open
                                  p' <- p
                                  close
-                                 return p
+                                 return p'
