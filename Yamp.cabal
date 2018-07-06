@@ -54,10 +54,10 @@ library
   -- other-modules:       
   
   -- LANGUAGE extensions used by modules in this package.
-  default-extensions:    GADTs, KindSignatures
+  -- default-extensions:    GADTs, KindSignatures
   
   -- Other library packages from which modules are imported.
-  build-depends:       base >=4.9 && <4.10, State
+  build-depends:       base >=4.9 && <4.10
   
   -- Directories containing source files.
   hs-source-dirs:      src
