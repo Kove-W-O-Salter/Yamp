@@ -7,3 +7,7 @@
 ## 1.0.0.1  -- 2018-7-6
 
 * More and more parsers.
+
+## 1.0.0.2  -- 2018-7-7
+
+* New: `careful` parser.

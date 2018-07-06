@@ -192,3 +192,15 @@ module Text.Yamp where
                 case apply p2 stream1 of
                     []            -> [(x,stream1)]
                     [(y,stream2)] -> [])
+
+    --
+    -- Parser a Parser excluding curtain inputs.
+    --
+    careful       :: Parser a -> [Char] -> Parser a
+    careful p1 cs  = Parser (\stream0 ->
+        case apply p1 stream0 of
+            []            -> []
+            [(c,stream1)] ->
+                if any (==c) cs
+                    then []
+                    else [(c,stream1)])
