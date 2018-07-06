@@ -196,7 +196,7 @@ module Text.Yamp where
     --
     -- Parser a Parser excluding curtain inputs.
     --
-    careful       :: Parser a -> [Char] -> Parser a
+    careful       :: Parser Char -> [Char] -> Parser Char
     careful p1 cs  = Parser (\stream0 ->
         case apply p1 stream0 of
             []            -> []
