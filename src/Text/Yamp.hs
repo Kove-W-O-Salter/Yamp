@@ -220,7 +220,7 @@ module Text.Yamp where
     --
     -- Parse many Parsers separated by another Parser.
     --
-    sepBy     :: Parser a -> Parser a -> Parser [a]
+    sepBy     :: Parser a -> Parser b -> Parser [b]
     sepBy s p  = do xs <- many (do x <- p
                                    s
                                    return x)
@@ -228,7 +228,23 @@ module Text.Yamp where
                     return (xs ++ [x])
 
     --
+    -- Parse many Parsers separated by another Parser.
+    --
+    sepBy1     :: Parser a -> Parser b -> Parser [b]
+    sepBy1 s p  = do xs <- some (do x <- p
+                                    s
+                                    return x)
+                     x <- p
+                     return (xs ++ [x])
+
+    --
     -- Parse many Parsers separated by commas.
     --
     commaSep :: Parser a -> Parser [a]
     commaSep  = sepBy (matchChar ',')
+
+    --
+    -- Parser more Parser separated by commas.
+    --
+    commaSep1 :: Parser a -> Parser [a]
+    commaSep1  = sepBy1 (matchChar ',')
