@@ -204,3 +204,13 @@ module Text.Yamp where
                 if any (==c) cs
                     then []
                     else [(c,stream1)])
+
+    --
+    -- Parser many Parsers separated by another Parser.
+    --
+    sepBy     :: Parser a -> Parser a -> Parser [a]
+    sepBy s p  = do xs <- many (do x <- p
+                                   s
+                                   return x)
+                    x <- p
+                    return (xs ++ [x])
