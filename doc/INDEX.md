@@ -2,6 +2,6 @@
 
 * For a list of functions,
   with their descriptions,
-  see [Functions](https://github.com/Kove-W-O-Salter/Yamp/blob/master/doc/FUNCTIONS.md).
+  see [Functions](https://github.com/Kove-W-O-Salter/Yamp/blob/master/doc/FUNCTONS.md).
 * For a series of tutorials
   see [Tutorials](https://github.com/Kove-W-O-Salter/Yamp/blob/master/doc/tuts/INDEX.md).

@@ -1,7 +1,7 @@
 # Yamp 1.0.0.2 functions list
 
 ```haskell
---                                          p
+-- 
 -- Parse a Parser.
 --
 parse :: Parser a -> Stream -> [a]
