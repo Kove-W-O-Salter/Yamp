@@ -206,7 +206,7 @@ module Text.Yamp where
                     else [(c,stream1)])
 
     --
-    -- Parser many Parsers separated by another Parser.
+    -- Parse many Parsers separated by another Parser.
     --
     sepBy     :: Parser a -> Parser a -> Parser [a]
     sepBy s p  = do xs <- many (do x <- p
@@ -214,3 +214,9 @@ module Text.Yamp where
                                    return x)
                     x <- p
                     return (xs ++ [x])
+
+   --
+   -- Parse many Parsers separated by commas.
+   --
+   commaSep :: Parser a -> Parser [a]
+   commaSep  = sepBy (matchChar ',')
