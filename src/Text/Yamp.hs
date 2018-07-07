@@ -150,6 +150,18 @@ module Text.Yamp where
     spaces1  = some space
 
     --
+    -- Match zero or more letters.
+    --
+    letters :: Parser [Char]
+    letters  = many letter
+
+    --
+    -- Match one or more letters.
+    --
+    letters1 :: Parser [Char]
+    letters1  = some letter
+
+    --
     -- Match a String.
     --
     matchString        :: String -> Parser String
