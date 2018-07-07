@@ -227,8 +227,8 @@ module Text.Yamp where
                     x <- p
                     return (xs ++ [x])
 
-   --
-   -- Parse many Parsers separated by commas.
-   --
-   commaSep :: Parser a -> Parser [a]
-   commaSep  = sepBy (matchChar ',')
+    --
+    -- Parse many Parsers separated by commas.
+    --
+    commaSep :: Parser a -> Parser [a]
+    commaSep  = sepBy (matchChar ',')
