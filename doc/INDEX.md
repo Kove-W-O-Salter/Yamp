@@ -1,5 +1,7 @@
 # Yamp 1.0.0.4 Documentation
 
+[Home](https://github.com/Kove-W-O-Salter/Yamp/).
+
 * For a list of functions,
   with their descriptions,
   see [Functions](https://github.com/Kove-W-O-Salter/Yamp/blob/master/doc/FUNCTIONS.md).
@@ -7,3 +9,5 @@
   see [Tutorials](https://github.com/Kove-W-O-Salter/Yamp/blob/master/doc/tut/INDEX.md).
 * For examples see
   [Examples](https://github.com/Kove-W-O-Salter/Yamp/blob/master/doc/examples/INDEX.md).
+
+[Home](https://github.com/Kove-W-O-Salter/Yamp/).

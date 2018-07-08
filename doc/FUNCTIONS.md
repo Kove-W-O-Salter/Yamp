@@ -1,5 +1,7 @@
 # Yamp 1.0.0.4 Functions List
 
+[Index](https://github.com/Kove-W-O-Salter/Yamp/blob/master/doc/INDEX.md).
+
 ```haskell
 -- 
 -- Parse a Parser.
@@ -211,3 +213,5 @@ commaSep :: Parser a -> Parser [a]
 --
 commaSep1 :: Parser a -> Parser [a]
 ```
+
+[Index](https://github.com/Kove-W-O-Salter/Yamp/blob/master/doc/INDEX.md).
