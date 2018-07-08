@@ -21,7 +21,7 @@ module XMLParser where
     parseAttr  = do name <- letters
                     matchChar '='
                     value <- letters
-                    return (Attr name value)
+                    return $ Attr name value
 
     parseAttrs :: Parser [Attr]
     parseAttrs  = sepBy space parseAttr
@@ -29,16 +29,16 @@ module XMLParser where
     parseOTag :: Parser Tag
     parseOTag  = delim "<" ">" (do name <- letters1
                                    attrs <- parseAttrs
-                                   return (OTag name attrs))
+                                   return $ OTag name attrs)
 
     parseCTag :: Parser Tag
     parseCTag  = delim "<" ">" (do matchChar '/'
                                    name <- letters
-                                   return (CTag name))
+                                   return $ CTag name)
 
     parsePlainText :: Parser Expr
-    parsePlainText  = (do ls <- letters
-                          return (PlainText ls))
+    parsePlainText  = do ls <- letters
+                         return $ PlainText ls
 
     parseTag :: Parser Expr
     parseTag  = do otag <- parseOTag
@@ -46,9 +46,8 @@ module XMLParser where
                    body <- parseExpr
                    space
                    ctag <- parseCTag
-                   return (Tag otag body ctag)
+                   return $ Tag otag body ctag
 
     parseExpr :: Parser Expr
-    parseExpr  =  parseTag
-              <|> parsePlainText
+    parseExpr  = parseTag <|> parsePlainText
 ```
