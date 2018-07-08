@@ -24,7 +24,7 @@ module XMLParser where
                     return $ Attr name value
 
     parseAttrs :: Parser [Attr]
-    parseAttrs  = sepBy space parseAttr
+    parseAttrs  = sepBy spaces1 parseAttr
 
     parseOTag :: Parser Tag
     parseOTag  = delim "<" ">" (do name <- letters1
@@ -42,9 +42,9 @@ module XMLParser where
 
     parseTag :: Parser Expr
     parseTag  = do otag <- parseOTag
-                   space
+                   spaces
                    body <- parseExpr
-                   space
+                   spaces
                    ctag <- parseCTag
                    return $ Tag otag body ctag
 
