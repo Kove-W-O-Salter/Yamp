@@ -15,3 +15,8 @@
 ## 1.0.0.3  -- 2018-7-7
 
 * New: `sepBy`, `sepBy1`, `commaSep` and `commaSep1`.
+
+## 1.0.0.4  -- 2018-7-8
+
+* Fix `sepBy` and `sepBy1`.
+* Start documentation project.

@@ -1,4 +1,4 @@
-# XML Parser Example
+# Simple XML Parser Example
 ```haskell
 module XMLParser where
 
