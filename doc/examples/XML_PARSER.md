@@ -1,6 +1,6 @@
 # Simple XML Parser Example
 
-[Examples](https://github.com/Kove-W-O-Salter/Yamp/blob/master/doc/examples/INDEX.md).
+[Examples](./INDEX.md).
 
 ```haskell
 module XMLParser where
@@ -55,4 +55,4 @@ module XMLParser where
     parseExpr  = parseTag <|> parsePlainText
 ```
 
-[Examples](https://github.com/Kove-W-O-Salter/Yamp/blob/master/doc/examples/INDEX.md).
+[Examples](./INDEX.md).

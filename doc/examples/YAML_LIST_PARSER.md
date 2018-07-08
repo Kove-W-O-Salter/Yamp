@@ -1,6 +1,6 @@
 # Yaml List Parser
 
-[Examples](https://github.com/Kove-W-O-Salter/Yamp/blob/master/doc/examples/INDEX.md).
+[Examples](./INDEX.md).
 
 ```haskell
 module YamlListParser where
@@ -16,4 +16,4 @@ module YamlListParser where
     yamlListItem  = some (letter <|> digit <|> space)
 ```
 
-[Examples](https://github.com/Kove-W-O-Salter/Yamp/blob/master/doc/examples/INDEX.md).
+[Examples](./INDEX.md).

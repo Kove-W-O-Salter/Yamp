@@ -17,4 +17,4 @@ Now you should be able
 to import it via:
 `Text.Yamp` module.
 ## Documentation
-Documentation can be found [here](https://github.com/Kove-W-O-Salter/Yamp/blob/master/doc/INDEX.md).
+Documentation can be found [here](./doc/INDEX.md).
