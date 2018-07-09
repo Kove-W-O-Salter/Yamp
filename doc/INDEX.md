@@ -1,4 +1,4 @@
-# Yamp 1.0.0.4 Documentation
+# Yamp 1.0.0.5 Documentation
 
 [Home](https://github.com/Kove-W-O-Salter/Yamp/).
 

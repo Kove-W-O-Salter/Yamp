@@ -20,3 +20,7 @@
 
 * Fix `sepBy` and `sepBy1`.
 * Start documentation project.
+
+## 1.0.0.5  -- 2018-7-9
+
+* Fix `sepBy` and `sepBy1`.
