@@ -221,15 +221,23 @@ module Text.Yamp where
     -- Parse many Parsers separated by another Parser.
     --
     sepBy     :: Parser a -> Parser b -> Parser [b]
-    sepBy s p  = many (do s
-                          p)
+    sepBy s p  = Parser (\stream0 ->
+        case apply p stream0 of
+            []            -> [([],stream0)]
+            [(x,stream1)] ->
+                case apply (many $ s >> p) stream1 of
+                    []             -> [([x],stream1)]
+                    [(xs,stream2)] -> [(x:xs,stream2)])
+                    
 
     --
     -- Parse many Parsers separated by another Parser.
     --
     sepBy1     :: Parser a -> Parser b -> Parser [b]
-    sepBy1 s p  =  some (do s
-                            p)
+    sepBy1 s p  = do x <- p
+                     s
+                     xs <- sepBy s p
+                     return $ x:xs
 
     --
     -- Parse many Parsers separated by commas.
