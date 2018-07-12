@@ -1,4 +1,4 @@
-# Yamp 1.0.0.5 Examples
+# Yamp 1.0.0.6 Examples
 
 [Index](../INDEX.md).
 

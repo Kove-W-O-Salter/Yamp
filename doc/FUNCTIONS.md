@@ -1,4 +1,4 @@
-# Yamp 1.0.0.5 Functions List
+# Yamp 1.0.0.6 Functions List
 
 [Index](./INDEX.md).
 
@@ -212,6 +212,13 @@ commaSep :: Parser a -> Parser [a]
 -- Parser more Parser separated by commas.
 --
 commaSep1 :: Parser a -> Parser [a]
+```
+---
+```
+--
+-- Parser a Parser until the input Stream is empty.
+--
+manyUntilNull :: Parser a -> Parser [a]
 ```
 
 [Index](./INDEX.md).

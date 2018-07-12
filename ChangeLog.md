@@ -24,3 +24,7 @@
 ## 1.0.0.5  -- 2018-7-9
 
 * Fix `sepBy` and `sepBy1`.
+
+## 1.0.0.6  -- 2018-7-12
+
+* Add `manyUntilNull`.
