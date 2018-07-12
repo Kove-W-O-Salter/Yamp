@@ -251,3 +251,18 @@ commaSep  = sepBy (matchChar ',')
 --
 commaSep1 :: Parser a -> Parser [a]
 commaSep1  = sepBy1 (matchChar ',')
+
+--
+-- Parser a Parser until the input Stream is empty.
+--
+manyUntilNull   :: Parser a -> Parser [a]
+manyUntilNull p  = Parser (\stream0 ->
+    if null stream0
+        then [([],stream0)]
+        else
+            case apply p stream0 of
+                []            -> []
+                [(x,stream1)] ->
+                    case apply (manyUntilNull p) stream1 of
+                        []             -> []
+                        [(xs,stream2)] -> [(x:xs,stream2)])
